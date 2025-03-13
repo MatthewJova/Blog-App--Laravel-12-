@@ -20,8 +20,8 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
     <nav class="bg-blue-500 p-4 text-white">
-        <a href="{{ route('blogs.index') }}" class="mr-4">Home</a>
-        <a href="{{ route('blogs.create') }}" class="mr-4">Create Blog</a>
+        <a href="{{ route('blogs.index') }}" class="mr-4 text-white">Home</a>
+        <a href="{{ route('blogs.create') }}" class="mr-4 text-white">Create Blog</a>
     </nav>
 
     <div class="container mx-auto p-4">

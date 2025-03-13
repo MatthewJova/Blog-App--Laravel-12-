@@ -2,11 +2,19 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('blogs.store') }}" method="POST">
+    <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" class="form-control">
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image">
+            @error('image')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div>

@@ -9,6 +9,7 @@
             <!-- Flexbox untuk menata judul & tombol edit/delete -->
             <div class="flex justify-between items-center">
                 <h2 class="text-lg font-semibold">{{ $blog->title }}</h2>
+                <img src="{{ asset($blog->image) }}" width="200px" alt="Blog Image">
                 <div class="flex gap-2">
                     <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">

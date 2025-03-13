@@ -3,13 +3,27 @@
 @section('content')
 <div class="container">
     <h1>Edit Blog</h1>
-    <form action="{{ route('blogs.update', $blog->id) }}" method="POST">
+    <form action="{{ route('blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control" value="{{ $blog->title }}" required>
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image">
+            
+            @if($blog->image)
+                <div class="mt-2">
+                    <img src="{{ asset($blog->image) }}" width="100px" alt="Current Image">
+                </div>
+            @endif
+            @error('image')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div>

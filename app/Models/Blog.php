@@ -9,5 +9,5 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content']; // Tambahkan atribut yang boleh diisi
+    protected $fillable = ['title', 'content', 'image']; // Tambahkan atribut yang boleh diisi
 }

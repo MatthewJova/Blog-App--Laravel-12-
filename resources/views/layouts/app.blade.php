@@ -19,10 +19,16 @@
 
 </head>
 <body class="bg-gray-100 text-gray-900">
-    <nav class="bg-blue-500 p-4 text-white">
+<nav class="bg-blue-500 p-4 text-white flex justify-between">
+    <div>
         <a href="{{ route('blogs.index') }}" class="mr-4 text-white">Home</a>
         <a href="{{ route('blogs.create') }}" class="mr-4 text-white">Create Blog</a>
-    </nav>
+    </div>
+    <div>
+        <a href="{{ route('logout') }}" class="btn btn-danger">Log Out</a>
+    </div>
+</nav>
+
 
     <div class="container mx-auto p-4">
         @yield('content')

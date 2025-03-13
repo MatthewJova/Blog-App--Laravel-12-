@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AuthController;
 
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('post.login');
 Route::get('register', [AuthController::class, 'register'])->name('register');

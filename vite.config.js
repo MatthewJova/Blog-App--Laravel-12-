@@ -10,4 +10,7 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    optimizeDeps: {
+        include: ['@tiptap/core', '@tiptap/starter-kit'],
+    },
 });
